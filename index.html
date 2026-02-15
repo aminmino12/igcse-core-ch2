@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Core Physics - Electronic Devices</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg,#141e30,#243b55);
+    color:white;
+    text-align:center;
+}
+
+header{
+    padding:40px;
+}
+
+header h1{
+    font-size:40px;
+    color:#00f2fe;
+}
+
+header p{
+    font-size:18px;
+    color:#caf0f8;
+}
+
+/* Buttons */
+.btn{
+    width:90%;
+    max-width:500px;
+    padding:16px;
+    margin:10px auto;
+    display:block;
+    font-size:18px;
+    font-weight:bold;
+    border:none;
+    border-radius:30px;
+    background: linear-gradient(90deg, #00f2fe, #4facfe);
+    color:black;
+    cursor:pointer;
+    transition:0.3s;
+}
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* Card content */
+.card{
+    background:white;
+    color:#222;
+    margin:15px auto;
+    width:90%;
+    max-width:600px;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.4);
+    display:none;
+    animation:fadein 0.4s ease-in-out;
+}
+
+@keyframes fadein{
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+.card h2{
+    color:#0f2027;
+    margin-bottom:10px;
+}
+
+.card ul{
+    margin-left:20px;
+}
+
+/* Exam tips highlight */
+.tip{
+    background:#ffe066;
+    padding:8px;
+    border-radius:8px;
+    font-weight:bold;
+    margin-top:10px;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>IGCSE Core Physics</h1>
+<p>Chapter 2 – Electronic Devices (Core Only)</p>
+</header>
+
+<div>
+<!-- Ammeter -->
+<button class="btn" onclick="openCard('ammeter')">Ammeter</button>
+<div class="card" id="ammeter">
+<h2>Ammeter</h2>
+<ul>
+<li>Measures current in a circuit (in amperes, A).</li>
+<li>Connected in series with the component.</li>
+<li>Has very low resistance to avoid affecting current.</li>
+</ul>
+<div class="tip">Exam Tip: Always connect an ammeter in series.</div>
+</div>
+
+<!-- Voltmeter -->
+<button class="btn" onclick="openCard('voltmeter')">Voltmeter</button>
+<div class="card" id="voltmeter">
+<h2>Voltmeter</h2>
+<ul>
+<li>Measures potential difference (voltage) across a component (in volts, V).</li>
+<li>Connected in parallel with the component.</li>
+<li>Has very high resistance to minimize current through it.</li>
+</ul>
+<div class="tip">Exam Tip: Always connect a voltmeter in parallel.</div>
+</div>
+
+<!-- Variable Resistor / Rheostat -->
+<button class="btn" onclick="openCard('rheostat')">Variable Resistor / Rheostat</button>
+<div class="card" id="rheostat">
+<h2>Variable Resistor / Rheostat</h2>
+<ul>
+<li>Changes current in a circuit by varying resistance.</li>
+<li>Used to control brightness, speed, or current.</li>
+<li>Connected in series with the component.</li>
+</ul>
+<div class="tip">Exam Tip: Rheostats control current by changing resistance.</div>
+</div>
+
+<!-- Diodes -->
+<button class="btn" onclick="openCard('diode')">Diode</button>
+<div class="card" id="diode">
+<h2>Diode</h2>
+<ul>
+<li>Allows current to flow in one direction only.</li>
+<li>Forward bias → current flows; Reverse bias → no current.</li>
+<li>Used in rectifiers and circuit protection.</li>
+</ul>
+<div class="tip">Exam Tip: Diode blocks current in reverse direction.</div>
+</div>
+
+<!-- Diode as Rectifier -->
+<button class="btn" onclick="openCard('rectifier')">Diode as Rectifier</button>
+<div class="card" id="rectifier">
+<h2>Diode as Rectifier</h2>
+<ul>
+<li>Converts AC to DC.</li>
+<li>Single diode: half-wave rectifier.</li>
+<li>Four diodes in bridge: full-wave rectifier.</li>
+<li>Smooths output with capacitors (optional for Core).</li>
+</ul>
+<div class="tip">Exam Tip: Rectifiers use diodes to allow only one direction of current.</div>
+</div>
+
+<!-- LEDs and Lamps -->
+<button class="btn" onclick="openCard('ledLamp')">LEDs and Lamps</button>
+<div class="card" id="ledLamp">
+<h2>LEDs and Lamps</h2>
+<ul>
+<li>LED emits light when current passes through it.</li>
+<li>Lamps convert electrical energy into light (and heat).</li>
+<li>LEDs must be connected correctly (polarity matters).</li>
+<li>Used in indicators, displays, and lighting.</li>
+</ul>
+<div class="tip">Exam Tip: LEDs are sensitive to direction and voltage.</div>
+</div>
+
+<!-- Potentiometer / Potential Divider -->
+<button class="btn" onclick="openCard('potentiometer')">Potentiometer / Potential Divider</button>
+<div class="card" id="potentiometer">
+<h2>Potentiometer / Potential Divider</h2>
+<ul>
+<li>Used to obtain variable voltage from a fixed voltage supply.</li>
+<li>Three terminals: two ends of resistor, wiper in middle.</li>
+<li>Used in volume controls, sensors, and calibration circuits.</li>
+</ul>
+<div class="tip">Exam Tip: Potential divider gives a fraction of total voltage.</div>
+</div>
+
+</div>
+
+<script>
+function openCard(id){
+    document.querySelectorAll('.card').forEach(c => c.style.display='none');
+    document.getElementById(id).style.display='block';
+}
+</script>
+
+</body>
+</html>
